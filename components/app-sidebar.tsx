@@ -12,7 +12,7 @@ import {
   FileText,
 } from "lucide-react"
 
-const navigation = [
+export const navigation = [
   {
     title: "Getting Started",
     items: [

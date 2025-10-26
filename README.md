@@ -1,23 +1,140 @@
-# registry-template
+# Reza UI - Component Registry
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+A modern, accessible component registry built with Next.js 15, React 19, Tailwind CSS v4, and Radix UI.
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+## 🎨 Features
 
-## Getting Started
+- **19+ Production-Ready Components** - Accessible, customizable UI components
+- **Dark Mode Support** - Built-in theme switching with system preference detection
+- **Modern Stack** - Next.js 15, React 19, Tailwind CSS v4, TypeScript
+- **Accessible** - ARIA compliant components built with Radix UI
+- **shadcn CLI Compatible** - Easy installation via shadcn CLI
+- **v0 Integration** - Direct import to v0.dev for AI editing
 
-This is a template for creating a custom registry using Next.js.
+## 🚀 Quick Start
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+### Installation
 
-## Documentation
+Install components individually using the shadcn CLI:
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+```bash
+npx shadcn@latest add https://rezajafar.com/r/registry.json [component-name]
+```
+
+### Examples
+
+```bash
+# Install a button component
+npx shadcn@latest add https://rezajafar.com/r/registry.json button
+
+# Install a dialog component
+npx shadcn@latest add https://rezajafar.com/r/registry.json dialog
+
+# Install an example block
+npx shadcn@latest add https://rezajafar.com/r/registry.json table-example
+```
+
+## 📦 Available Components
+
+### Form Components (8)
+- `button` - Multi-variant button with CVA
+- `input` - Form input with validation states
+- `textarea` - Multi-line text input
+- `label` - Accessible form labels
+- `checkbox` - Checkbox with Radix UI
+- `radio-group` - Radio button groups
+- `switch` - Toggle switch
+- `select` - Dropdown select
+
+### Layout Components (6)
+- `card` - Composition-based card
+- `dialog` - Modal dialogs
+- `sheet` - Slide-over panels
+- `tabs` - Tabbed navigation
+- `accordion` - Collapsible sections
+- `alert` - Notification banners
+
+### Data Display (3)
+- `table` - Responsive data tables
+- `badge` - Status badges
+- `avatar` - User avatars
+
+### Interactive (2)
+- `dropdown-menu` - Context menus
+- `sonner` - Toast notifications
+
+## 🛠️ Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Run development server
+pnpm dev
+
+# Build the registry
+pnpm registry:build
+
+# Build for production
+pnpm build
+```
+
+## 📁 Project Structure
+
+```
+├── app/                      # Next.js app directory
+├── components/              # App-specific components
+│   ├── theme-provider.tsx  # Dark mode provider
+│   ├── theme-toggle.tsx    # Theme switcher
+│   ├── site-header.tsx     # Header with navigation
+│   ├── site-footer.tsx     # Footer with links
+│   └── app-sidebar.tsx     # Sidebar navigation
+├── registry/
+│   └── new-york/
+│       ├── ui/             # Base UI components
+│       └── blocks/         # Example implementations
+├── public/r/               # Built registry JSON files
+└── registry.json           # Registry configuration
+```
+
+## 🎯 Component Categories
+
+Components are organized into logical categories on the demo site:
+
+- **Form Components** - Input controls and form elements
+- **Layout** - Structural and container components
+- **Data Display** - Components for showing data
+- **Interactive** - Dynamic and interactive components
+
+## 🌙 Dark Mode
+
+The registry includes full dark mode support:
+
+- System preference detection
+- Manual theme toggle in header
+- Smooth transitions
+- CSS variables for theming
+
+## 🔗 Links
+
+- **Author**: Reza Jafar
+- **Website**: [rezajafar.com](https://rezajafar.com)
+- **GitHub**: [github.com/creativerezz](https://github.com/creativerezz)
+- **LinkedIn**: [linkedin.com/in/rezajafar](https://linkedin.com/in/rezajafar)
+
+## 📝 License
+
+Feel free to use these components in your projects.
+
+## 🙏 Credits
+
+Built with:
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Lucide Icons](https://lucide.dev/)
+
+---
+
+Built by [Reza Jafar](https://rezajafar.com)

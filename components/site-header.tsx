@@ -1,13 +1,17 @@
 import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { MobileSidebar } from "@/components/mobile-sidebar"
 import { Button } from "@/registry/new-york/ui/button"
 import { Github, Linkedin, Globe } from "lucide-react"
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="mr-4 flex">
+      <div className="mx-auto flex h-14 w-full max-w-screen-2xl items-center px-4 md:px-6 lg:pl-64">
+        <div className="mr-4 flex items-center gap-2">
+          <div className="lg:hidden">
+            <MobileSidebar />
+          </div>
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="font-bold text-xl">Reza UI</span>
           </Link>

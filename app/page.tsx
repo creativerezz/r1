@@ -1,6 +1,6 @@
 import * as React from "react"
 import { OpenInV0Button } from "@/components/open-in-v0-button"
-import { AppSidebar } from "@/components/app-sidebar"
+import { PageLayout } from "@/components/page-layout"
 import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world"
 import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form"
 import PokemonPage from "@/registry/new-york/blocks/complex-component/page"
@@ -14,55 +14,52 @@ import { Blocks, Layers, FileText, Package } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="flex">
-      <AppSidebar />
-      <main className="flex-1">
-        <div className="container max-w-5xl py-8 md:py-12 lg:py-16">
-          {/* Hero Section */}
-          <div className="flex flex-col items-start gap-4 mb-12">
-            <Badge variant="secondary">Component Registry</Badge>
-            <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
-              Beautiful components for your next project
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl">
-              A curated collection of 19+ accessible, production-ready components built with Next.js 15, React 19, Tailwind CSS v4, and Radix UI. Install via shadcn CLI.
-            </p>
-            <div className="flex flex-wrap gap-3 mt-2">
-              <code className="relative rounded bg-muted px-3 py-1.5 text-sm font-mono">
-                npx shadcn@latest add https://rezajafar.com/r/registry.json
-              </code>
-            </div>
+    <PageLayout>
+      {/* Hero Section */}
+      <div className="flex flex-col items-start gap-4 mb-12">
+        <Badge variant="secondary">Component Registry</Badge>
+        <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+          Beautiful components for your next project
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-2xl">
+          A curated collection of 19+ accessible, production-ready components built with Next.js 15, React 19, Tailwind CSS v4, and Radix UI. Install via shadcn CLI.
+        </p>
+        <div className="flex flex-wrap gap-3 mt-2">
+          <code className="relative rounded bg-muted px-3 py-1.5 text-sm font-mono">
+            npx shadcn@latest add https://rezajafar.com/r/registry.json
+          </code>
+        </div>
+      </div>
+
+      {/* Components Grid */}
+      <div className="space-y-16">
+        {/* Form Components Section */}
+        <section id="form" className="scroll-mt-24">
+          <div className="flex items-center gap-3 mb-6">
+            <FileText className="h-6 w-6 text-primary" />
+            <h2 className="text-3xl font-bold tracking-tight">Form Components</h2>
           </div>
-
-          {/* Components Grid */}
-          <div className="space-y-16">
-            {/* Form Components Section */}
-            <section id="form">
-              <div className="flex items-center gap-3 mb-6">
-                <FileText className="h-6 w-6 text-primary" />
-                <h2 className="text-3xl font-bold tracking-tight">Form Components</h2>
-              </div>
-              <div className="grid gap-8">
-                <div className="flex flex-col gap-4 border rounded-lg p-6 relative">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold mb-1">Contact Form</h3>
-                      <p className="text-sm text-muted-foreground">
-                        A contact form with Zod validation and accessible error handling.
-                      </p>
-                    </div>
-                    <OpenInV0Button name="example-form" className="w-fit" />
-                  </div>
-                  <div className="flex items-center justify-center min-h-[500px] relative">
-                    <ExampleForm />
-                  </div>
+          <div className="grid gap-8">
+            <div className="flex flex-col gap-4 border rounded-lg p-6 relative">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-semibold mb-1">Contact Form</h3>
+                  <p className="text-sm text-muted-foreground">
+                    A contact form with Zod validation and accessible error handling.
+                  </p>
                 </div>
+                <OpenInV0Button name="example-form" className="w-fit" />
+              </div>
+              <div className="flex items-center justify-center min-h-[500px] relative">
+                <ExampleForm />
+              </div>
+            </div>
 
-                <div className="flex flex-col gap-4 border rounded-lg p-6 relative">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold mb-1">Select Dropdown</h3>
-                      <p className="text-sm text-muted-foreground">
+            <div className="flex flex-col gap-4 border rounded-lg p-6 relative">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-semibold mb-1">Select Dropdown</h3>
+                  <p className="text-sm text-muted-foreground">
                         A select dropdown with grouped items and keyboard navigation.
                       </p>
                     </div>
@@ -76,7 +73,7 @@ export default function Home() {
             </section>
 
             {/* Layout Components Section */}
-            <section id="layout">
+            <section id="layout" className="scroll-mt-24">
               <div className="flex items-center gap-3 mb-6">
                 <Layers className="h-6 w-6 text-primary" />
                 <h2 className="text-3xl font-bold tracking-tight">Layout Components</h2>
@@ -115,7 +112,7 @@ export default function Home() {
             </section>
 
             {/* Data Display Section */}
-            <section id="data">
+            <section id="data" className="scroll-mt-24">
               <div className="flex items-center gap-3 mb-6">
                 <Blocks className="h-6 w-6 text-primary" />
                 <h2 className="text-3xl font-bold tracking-tight">Data Display</h2>
@@ -139,7 +136,7 @@ export default function Home() {
             </section>
 
             {/* Interactive Section */}
-            <section id="interactive">
+            <section id="interactive" className="scroll-mt-24">
               <div className="flex items-center gap-3 mb-6">
                 <Package className="h-6 w-6 text-primary" />
                 <h2 className="text-3xl font-bold tracking-tight">Interactive Examples</h2>
@@ -192,8 +189,6 @@ export default function Home() {
               </div>
             </section>
           </div>
-        </div>
-      </main>
-    </div>
+      </PageLayout>
   )
 }
